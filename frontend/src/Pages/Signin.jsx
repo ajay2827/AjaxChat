@@ -42,7 +42,7 @@ const Signin = () => {
           },
         };
 
-        const data=await axios.post('http://localhost:5500/api/v1/user/login',
+        const data=await axios.post('https://ajaxchat.onrender.com/api/v1/user/login',
         {
           email,
           password

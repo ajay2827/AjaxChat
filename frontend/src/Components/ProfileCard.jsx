@@ -58,7 +58,7 @@ const ProfileCard = ({user, setProfileshow}) => {
           Authorization: `Bearer ${token}`,
         },
       };
-      const {data}=await axios.put("http://localhost:5500/api/v1/user/updateavatar",{
+      const {data}=await axios.put("https://ajaxchat.onrender.com/api/v1/user/updateavatar",{
         userId:user1.current.data.user._id,
         avatar:avatar
       },config)

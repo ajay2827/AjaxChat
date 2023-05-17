@@ -66,7 +66,7 @@ const GroupModel = ({setShowgroupmodel,user}) => {
                   Authorization: `Bearer ${user.data.token}`,
                 },
               };
-            const {data}=await axios.get(`http://localhost:5500/api/v1/user?search=${searchuser}`, config);
+            const {data}=await axios.get(`https://ajaxchat.onrender.com/api/v1/user?search=${searchuser}`, config);
             
             setSearchresult(data);
             setLoading(false);
@@ -103,7 +103,7 @@ const GroupModel = ({setShowgroupmodel,user}) => {
         },
       };
       
-      const {data}=await axios.post("http://localhost:5500/api/v1/chat/group",{
+      const {data}=await axios.post("https://ajaxchat.onrender.com/api/v1/chat/group",{
         groupname:groupname,
         avatar:avatar ,
         participant:JSON.stringify(participant.map((user)=>user._id))

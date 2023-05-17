@@ -39,7 +39,7 @@ const ChatSide = ({fetchagain}) => {
       };
 
       const { data } = await axios.get(
-        "http://localhost:5500/api/v1/chat",
+        "https://ajaxchat.onrender.com/api/v1/chat",
         config
       );
       setChats(data);

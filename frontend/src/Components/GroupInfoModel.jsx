@@ -49,7 +49,7 @@ const GroupInfoModel = ({fetchagain,setFetchagain,setShowgroupmodel}) => {
              Authorization: `Bearer ${token}`,
            },
          };
-       const {data}=await axios.get(`http://localhost:5500/api/v1/user?search=${searchuser}`, config);
+       const {data}=await axios.get(`https://ajaxchat.onrender.com/api/v1/user?search=${searchuser}`, config);
        console.log(data);
        setSearchresult(data);
        setLoading(false);
@@ -75,7 +75,7 @@ const GroupInfoModel = ({fetchagain,setFetchagain,setShowgroupmodel}) => {
               Authorization: `Bearer ${token}`,
             },
           };
-          const {data}=await axios.put('http://localhost:5500/api/v1/chat/adduser',{
+          const {data}=await axios.put('https://ajaxchat.onrender.com/api/v1/chat/adduser',{
             chatId:selectchat._id,
             userId:user._id,
           },config);
@@ -103,7 +103,7 @@ const GroupInfoModel = ({fetchagain,setFetchagain,setShowgroupmodel}) => {
                   },
                 };
                 
-                const {data}=await axios.put('http://localhost:5500/api/v1/chat/rename',
+                const {data}=await axios.put('https://ajaxchat.onrender.com/api/v1/chat/rename',
                 {
                   groupId:selectchat._id,
                   groupName:groupname
@@ -127,7 +127,7 @@ const GroupInfoModel = ({fetchagain,setFetchagain,setShowgroupmodel}) => {
                 },
               };
 
-              const {data}=await axios.put('http://localhost:5500/api/v1/chat/remove',{
+              const {data}=await axios.put('https://ajaxchat.onrender.com/api/v1/chat/remove',{
                 groupId:selectchat._id,
                 userId:user.current.data.user._id
               },config);

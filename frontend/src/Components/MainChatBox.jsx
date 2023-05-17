@@ -45,7 +45,7 @@ const MainChatBox = ({fetchagain,setFetchagain}) => {
           Authorization: `Bearer ${token}`
         }
        }
-       const {data}=await axios.get(`http://localhost:5500/api/v1/message/${selectchat._id}`,config)
+       const {data}=await axios.get(`https://ajaxchat.onrender.com/api/v1/message/${selectchat._id}`,config)
        setMessage(data);
        setLoading(false);
 
@@ -69,7 +69,7 @@ const MainChatBox = ({fetchagain,setFetchagain}) => {
           }
         }
         setNewmessage("");
-        const {data}=await axios.post(`http://localhost:5500/api/v1/message`,{
+        const {data}=await axios.post(`https://ajaxchat.onrender.com/api/v1/message`,{
             content:newmessage,
             chatId:selectchat
           },config)
@@ -85,7 +85,7 @@ const MainChatBox = ({fetchagain,setFetchagain}) => {
   
    useEffect(()=>{
     // connection from frontend to backend
-    socket=io("http://localhost:5500")
+    socket=io("https://ajaxchat.onrender.com")
     socket.emit("setup",user.current.data.user)
     socket.on("connected",()=>setSocketconnection(true))
     socket.on("typing",()=>setIstyping(true))
@@ -141,7 +141,6 @@ const MainChatBox = ({fetchagain,setFetchagain}) => {
 
   }
 
-  console.log(notification,"<---------->")
 
   return (
     <div className='flex flex-col w-full px-3 py-2 rounded-lg shadow gap-y-2 shadow-comp bg-comp h-userchats' >

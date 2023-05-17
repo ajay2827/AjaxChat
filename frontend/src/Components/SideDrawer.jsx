@@ -51,7 +51,7 @@ const SideDrawer = ({ setDrawershow, user }) => {
       };
 
       const { data } = await axios.get(
-        `http://localhost:5500/api/v1/user?search=${searchusers}`,
+        `https://ajaxchat.onrender.com/api/v1/user?search=${searchusers}`,
         config
       );
 

@@ -78,7 +78,7 @@ const Signup = () => {
     };
     console.log(2,avatar)
     try {
-      const data = await axios.post("http://localhost:5500/api/v1/user", {
+      const data = await axios.post("https://ajaxchat.onrender.com/api/v1/user", {
         name,
         email,
         password,
