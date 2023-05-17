@@ -142,7 +142,7 @@ const GroupInfoModel = ({fetchagain,setFetchagain,setShowgroupmodel}) => {
 
   return (
     <div className='absolute top-0 left-0 right-0 z-50 flex items-start justify-center w-full h-full bg-model' >
-      <div className='z-50 flex flex-col items-center justify-start p-4 origin-top bg-white rounded-lg shadow-lg translate-y-28 gap-y-3 min-h-groupmodel lg:w-gm md:w-gm w-rw1' >
+      <div className='z-50 flex flex-col items-center justify-start p-4 origin-top bg-white rounded-lg shadow-lg translate-y-28 gap-y-3 min-h-groupmodel lg:w-gm md:w-gm w-sw1' >
         
         {/* Group Name */}
         <div className='flex items-center w-full text-4xl font-semibold tracking-wide font-Acme text-text1' >
@@ -171,9 +171,9 @@ const GroupInfoModel = ({fetchagain,setFetchagain,setShowgroupmodel}) => {
               user.current.data.user._id===selectchat.groupAdmin._id&&(<div className='flex flex-col items-center justify-center w-full px-10 gap-y-2' >
          
               {/* form for group name update */}
-            <form onSubmit={renameGroup} className='flex items-center justify-start w-full gap-x-2' >
+            <form onSubmit={renameGroup} className='flex items-center justify-start w-full lg:gap-x-2 md:gap-x-2 ' >
             <input onChange={(e)=>setGroupname(e.target.value)} type="text" className="bg-gray-50 font-open scale-90 font-medium  border w-80 border-gray-400 placeholder:text-gray-600 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5" placeholder="Update group name" />
-             <button type='submit' className='w-24 py-2 text-base font-medium text-center text-white scale-90 rounded-md hover:opacity-90 bg-button font-Acme' >Update</button>
+             <button type='submit' className='w-24 px-2 py-2 text-sm font-medium text-center text-white scale-90 rounded-md lg:text-base md:text-base hover:opacity-90 bg-button font-Acme' >Update</button>
             </form>
             
             {/* form to add user in the group */}
