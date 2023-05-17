@@ -4,8 +4,8 @@
   "description": "nodejs and socketio chat application",
   "main": "app.js",
   "scripts": {
-     "start":"node app.js",
-     "build":"nodemon app.js"
+     "dev":"nodemon app.js",
+     "build":"npm i"
   },
   "author": "Ajay",
   "license": "ISC",
