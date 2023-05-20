@@ -10,7 +10,7 @@ import {BsPersonCircle} from 'react-icons/bs'
 import {ChatState} from '../Context/ChatProvider'
 
 
-const GroupModel = ({setShowgroupmodel,user}) => {
+const GroupModel = ({setShowgroupmodel,user1}) => {
       
     // toast option
     const toastOptions = {
@@ -28,6 +28,9 @@ const GroupModel = ({setShowgroupmodel,user}) => {
    const [participant,setParticipant]=useState([]);
    const [avatar,setAvatar]=useState();
    const [loading,setLoading]=useState(false);
+   const user = useRef();
+  user.current=JSON.parse(localStorage.getItem("userInfo"));
+  let token=user.current.data.token;
   
   // context state
   const {selectchat,setSelectchat,chats,setChats} = ChatState();
@@ -63,7 +66,7 @@ const GroupModel = ({setShowgroupmodel,user}) => {
             setLoading(true);
             const config = {
                 headers: {
-                  Authorization: `Bearer ${user.data.token}`,
+                  Authorization: `Bearer ${token}`,
                 },
               };
             const {data}=await axios.get(`https://ajaxchat.onrender.com/api/v1/user?search=${searchuser}`, config);
@@ -99,7 +102,7 @@ const GroupModel = ({setShowgroupmodel,user}) => {
      try {
       const config = {
         headers: {
-          Authorization: `Bearer ${user.data.token}`,
+          Authorization: `Bearer ${token}`,
         },
       };
       
