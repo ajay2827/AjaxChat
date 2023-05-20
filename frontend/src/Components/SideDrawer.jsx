@@ -76,7 +76,7 @@ const SideDrawer = ({ setDrawershow, user }) => {
           Authorization:`Bearer ${user.data.token}`
         }
       }
-      const {data}=await axios.post('http://localhost:5500/api/v1/chat',{userId},config);
+      const {data}=await axios.post('https://ajaxchat.onrender.com/api/v1/chat',{userId},config);
       if(!chats.find((c)=>c._id===data._id))
       {
         setChats([data,...chats]);
