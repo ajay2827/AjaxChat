@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+# mongodb database
+  mongodb:
+    image: 'mongo'
+
+#backend  
+  backend:
+    build:
+      context: ./sever
+      dockerfile: Dockerfile
+    
+    ports:
+      - '5500:5500'
+    
+    volumes:
+      - ./sever:/ajaxchat/backend/
+      - /ajaxchat/backend/node_modules
+    depends_on:
+      - mongodb
+
+#frontend
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    
+    ports:
+      - '3000:3000'
+    
+    volumes:
+      - ./frontend/src:/ajaxchat/frontend/src
+    
+    depends_on:
+      - backend
